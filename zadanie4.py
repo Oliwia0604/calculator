@@ -1,7 +1,7 @@
 import logging
 logging.basicConfig(level=logging.INFO)
 
-def calculator(x, y, z, result):
+def calculator():
     x = int(input("Podaj skladnik 1:"))
     y = int(input("Podaj skladnik 2:"))
     z = input("Podaj działanie posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")
@@ -19,13 +19,15 @@ def calculator(x, y, z, result):
        logging.info(f"Odejmuje {x} i {y}") 
        logging.info(f"Mnoże {x} i {y}")
        logging.info(f"Dziele {x} i {y}")
-       print(f"Wynik to:" 'Dodaje: {x} + {y} = {}.format(add_result')
-       print(f"Wynik to:" 'Odejmuje: {x} - {y} = {}.format(add_result')
-       print(f"Wynik to:" 'Mnoże: {x} * {y} = {}.format(add_result')
-       print(f"Wynik to:" 'Dziele: {x} / {y} = {}.format(add_result')
+       print(f"Wynik to:" 'Dodaje: {x} + {y} = {result}.format(dodaje_result)')
+       print(f"Wynik to:" 'Odejmuje: {x} - {y} = {}.format(odejmuje_result')
+       print(f"Wynik to:" 'Mnoże: {x} * {y} = {}.format(mnoze_result')
+       print(f"Wynik to:" 'Dziele: {x} / {y} = {}.format(dziele_result')
+calculator()
 
 
-#print(f'Wynik to:  ')
+
+
 
 
 
