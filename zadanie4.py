@@ -2,27 +2,36 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 def calculator():
-    x = int(input("Podaj skladnik 1:"))
-    y = int(input("Podaj skladnik 2:"))
-    z = input("Podaj działanie posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")
-    operators = {"1": x+y, "2": x-y, "3": x*y, "4": x/y}
-    if operators == "1":
-       print(operators["Dodaje"])
-    elif operators == "2":
-       print(operators["Odejmuje"])
-    elif operators == "3":
-       print(operators["Mnoże"])
-    elif operators == "4":
-       print(operators["Dziele"])
-       logging.info(calculator)
+    x = float(input("Podaj skladnik 1:"))
+    y = float(input("Podaj skladnik 2:"))
+    operation = input("Podaj działanie posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:")
+    
+    if operation == "1":
        logging.info(f"Dodaje {x} i {y}")
-       logging.info(f"Odejmuje {x} i {y}") 
-       logging.info(f"Mnoże {x} i {y}")
+    elif operation == "2":
+       logging.info(f"Odejmuje {x} i {y}")
+    elif operation == "3":
+       logging.info(f"Mnoze {x} i {y}")
+    elif operation == "4":
        logging.info(f"Dziele {x} i {y}")
-       print(f"Wynik to:" 'Dodaje: {x} + {y} = {result}.format(dodaje_result)')
-       print(f"Wynik to:" 'Odejmuje: {x} - {y} = {}.format(odejmuje_result')
-       print(f"Wynik to:" 'Mnoże: {x} * {y} = {}.format(mnoze_result')
-       print(f"Wynik to:" 'Dziele: {x} / {y} = {}.format(dziele_result')
+
+    try:
+       result = get_result(operation, x,y)
+    except Exception as exc:
+       logging.info(exc)
+       return
+
+    print(f"Wynik to {result:.2f}")
+
+def get_result(operation, x,y):
+    return {
+       "1": x + y,
+       "2": x - y,
+       "3": x * y,
+       "4": x / y,
+    }.get(operation, "Operacja nie istnieje!")
+
+   
 calculator()
 
 
